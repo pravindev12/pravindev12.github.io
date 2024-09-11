@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.c0ec7034.css",
+    "main.js": "/static/js/main.64fe9400.js",
+    "static/media/pravin.png": "/static/media/pravin.3bc6e293a3c398d82d3b.png",
+    "static/media/intro-bg.jpg": "/static/media/intro-bg.55f2cb3bb1a839af9f11.jpg",
+    "static/media/faq.png": "/static/media/faq.af3e9845f0097bec3fee.png",
+    "static/media/upexcise.png": "/static/media/upexcise.d18db34983bf077d4289.png",
+    "index.html": "/index.html",
+    "main.c0ec7034.css.map": "/static/css/main.c0ec7034.css.map",
+    "main.64fe9400.js.map": "/static/js/main.64fe9400.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c0ec7034.css",
+    "static/js/main.64fe9400.js"
+  ]
+}
