@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.1ff30d67.css",
-    "main.js": "/static/js/main.e785a65a.js",
+    "main.js": "/static/js/main.8ca07952.js",
     "static/media/blog-3.jpg": "/static/media/blog-3.da47f0ca59d440259219.jpg",
     "static/media/blog-4.jpg": "/static/media/blog-4.16a156c63180b7efec6f.jpg",
     "static/media/blog-2.jpg": "/static/media/blog-2.cf2967f912a488365159.jpg",
@@ -11,12 +11,14 @@
     "static/media/faq.png": "/static/media/faq.af3e9845f0097bec3fee.png",
     "static/media/upexcise.png": "/static/media/upexcise.d18db34983bf077d4289.png",
     "index.html": "/index.html",
+    "static/media/pharmachain.svg": "/static/media/pharmachain.281610dc9fca036cd281a73c20171d52.svg",
+    "static/media/carbon-credit.svg": "/static/media/carbon-credit.89d5d12f5160bab3c8155ee38ec9d807.svg",
     "static/media/downarrow.webp": "/static/media/downarrow.73f9191410a1ef47e433.webp",
     "main.1ff30d67.css.map": "/static/css/main.1ff30d67.css.map",
-    "main.e785a65a.js.map": "/static/js/main.e785a65a.js.map"
+    "main.8ca07952.js.map": "/static/js/main.8ca07952.js.map"
   },
   "entrypoints": [
     "static/css/main.1ff30d67.css",
-    "static/js/main.e785a65a.js"
+    "static/js/main.8ca07952.js"
   ]
 }
