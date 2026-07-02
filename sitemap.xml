@@ -10,4 +10,19 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
+  <url>
+    <loc>https://pravindev12.github.io/blogs/handoff-ready-smart-contract-repo</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://pravindev12.github.io/blogs/tokenizing-real-world-assets-carbon-credits</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://pravindev12.github.io/blogs/what-white-label-blockchain-delivery-looks-like</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
 </urlset>
