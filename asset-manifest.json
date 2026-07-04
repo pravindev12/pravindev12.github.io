@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.0d9f608c.css",
-    "main.js": "/static/js/main.73db993a.js",
+    "main.css": "/static/css/main.bb5cfea2.css",
+    "main.js": "/static/js/main.8b67fe49.js",
     "static/media/pravin.png": "/static/media/pravin.3bc6e293a3c398d82d3b.png",
     "static/media/faq.png": "/static/media/faq.af3e9845f0097bec3fee.png",
     "static/media/upexcise.png": "/static/media/upexcise.d18db34983bf077d4289.png",
@@ -12,11 +12,11 @@
     "static/media/carbon-marketplace.svg": "/static/media/carbon-marketplace.9b7b6691f2ad70aac597bc5ac37b3d94.svg",
     "static/media/carbon-credit.svg": "/static/media/carbon-credit.958d309f6d0a6816f4f58f70f631bff5.svg",
     "static/media/pharmachain.svg": "/static/media/pharmachain.22d19ccbb53bb6dd4bf48203b2436465.svg",
-    "main.0d9f608c.css.map": "/static/css/main.0d9f608c.css.map",
-    "main.73db993a.js.map": "/static/js/main.73db993a.js.map"
+    "main.bb5cfea2.css.map": "/static/css/main.bb5cfea2.css.map",
+    "main.8b67fe49.js.map": "/static/js/main.8b67fe49.js.map"
   },
   "entrypoints": [
-    "static/css/main.0d9f608c.css",
-    "static/js/main.73db993a.js"
+    "static/css/main.bb5cfea2.css",
+    "static/js/main.8b67fe49.js"
   ]
 }
