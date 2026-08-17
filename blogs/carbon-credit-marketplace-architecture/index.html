@@ -1,0 +1,276 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="google-site-verification" content="EXJLCBwzIMzyaOW0dpDlEqtdtEDlopwHgBHc8Y7JGa0"><script type="text/javascript">!function(n){if("/"===n.search[1]){var a=n.search.slice(1).split("&").map((function(n){return n.replace(/~and~/g,"&")})).join("?");window.history.replaceState(null,null,n.pathname.slice(0,-1)+a+n.hash)}}(window.location)</script><link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f5df4e"><meta name="author" content="Pravin Raj"><meta name="description" content="Pravin Raj — white-label blockchain development partner for agencies &amp; dev teams. Smart contracts, full-stack dApps, DeFi &amp; RWA tokenization, shipped end-to-end under your brand."><meta name="keywords" content="blockchain developer, smart contract developer, Solidity, dApp development, Web3, DeFi, RWA tokenization, white-label blockchain partner, Ethereum, Polygon"><meta property="og:type" content="website"><meta property="og:title" content="Pravin Raj — Blockchain Development Partner"><meta property="og:description" content="White-label blockchain partner for agencies &amp; dev teams. Smart contracts, dApps, DeFi &amp; RWA — shipped under your brand."><meta property="og:url" content="https://pravindev12.github.io/"><meta property="og:image" content="https://pravindev12.github.io/og-image.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:creator" content="@PravinDev10"><meta name="twitter:title" content="Pravin Raj — Blockchain Development Partner"><meta name="twitter:description" content="White-label blockchain partner for agencies &amp; dev teams. Smart contracts, dApps, DeFi &amp; RWA — shipped under your brand."><meta name="twitter:image" content="https://pravindev12.github.io/og-image.png"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/manifest.json"><script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "mainEntity": {
+      "@type": "Person",
+      "name": "Pravin Raj",
+      "alternateName": "PRAVIN-DEV",
+      "url": "https://pravindev12.github.io/",
+      "image": "https://pravindev12.github.io/logo512.png",
+      "jobTitle": "White-Label Blockchain Development Partner",
+      "description": "Blockchain developer and white-label partner for agencies and dev teams — smart contracts, full-stack dApps, DeFi and RWA tokenization, shipped end-to-end.",
+      "email": "mailto:pravinpersonal3@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressRegion": "Tamil Nadu",
+        "addressCountry": "IN"
+      },
+      "knowsAbout": [
+        "Blockchain Development",
+        "Solidity",
+        "Smart Contracts",
+        "Ethereum",
+        "Polygon",
+        "dApp Development",
+        "DeFi",
+        "RWA Tokenization",
+        "The Graph",
+        "Web3",
+        "React",
+        "Node.js"
+      ],
+      "sameAs": [
+        "https://github.com/pravindev12",
+        "https://www.linkedin.com/in/pravin-raj-dev/",
+        "https://twitter.com/PravinDev10"
+      ]
+    }
+  }</script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"><title>Building a Tokenized Carbon-Credit Marketplace on Polygon: A Full Architecture Breakdown — Pravin Raj</title><script defer="defer" src="/static/js/main.5b8fcffd.js"></script><link href="/static/css/main.bb5cfea2.css" rel="stylesheet"><style type="text/css">/*
+  code is extracted from Calendly's embed stylesheet: https://assets.calendly.com/assets/external/widget.css
+*/
+
+.calendly-inline-widget,
+.calendly-inline-widget *,
+.calendly-badge-widget,
+.calendly-badge-widget *,
+.calendly-overlay,
+.calendly-overlay * {
+    font-size:16px;
+    line-height:1.2em
+}
+
+.calendly-inline-widget iframe,
+.calendly-badge-widget iframe,
+.calendly-overlay iframe {
+    display:inline;
+    width:100%;
+    height:100%
+}
+
+.calendly-popup-content {
+    position:relative
+}
+
+.calendly-popup-content.calendly-mobile {
+    -webkit-overflow-scrolling:touch;
+    overflow-y:auto
+}
+
+.calendly-overlay {
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    overflow:hidden;
+    z-index:9999;
+    background-color:#a5a5a5;
+    background-color:rgba(31,31,31,0.4)
+}
+
+.calendly-overlay .calendly-close-overlay {
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0
+}
+
+.calendly-overlay .calendly-popup {
+    box-sizing:border-box;
+    position:absolute;
+    top:50%;
+    left:50%;
+    -webkit-transform:translateY(-50%) translateX(-50%);
+    transform:translateY(-50%) translateX(-50%);
+    width:80%;
+    min-width:900px;
+    max-width:1000px;
+    height:90%;
+    max-height:680px
+}
+
+@media (max-width: 975px) {
+    .calendly-overlay .calendly-popup {
+        position:fixed;
+        top:50px;
+        left:0;
+        right:0;
+        bottom:0;
+        -webkit-transform:none;
+        transform:none;
+        width:100%;
+        height:auto;
+        min-width:0;
+        max-height:none
+    }
+}
+
+.calendly-overlay .calendly-popup .calendly-popup-content {
+    height:100%;
+}
+
+.calendly-overlay .calendly-popup-close {
+    position:absolute;
+    top:25px;
+    right:25px;
+    color:#fff;
+    width:19px;
+    height:19px;
+    cursor:pointer;
+    background:url(https://assets.calendly.com/assets/external/close-icon.svg) no-repeat;
+    background-size:contain
+}
+
+@media (max-width: 975px) {
+    .calendly-overlay .calendly-popup-close {
+        top:15px;
+        right:15px
+    }
+}
+
+.calendly-badge-widget {
+    position:fixed;
+    right:20px;
+    bottom:15px;
+    z-index:9998
+}
+
+.calendly-badge-widget .calendly-badge-content {
+    display:table-cell;
+    width:auto;
+    height:45px;
+    padding:0 30px;
+    border-radius:25px;
+    box-shadow:rgba(0,0,0,0.25) 0 2px 5px;
+    font-family:sans-serif;
+    text-align:center;
+    vertical-align:middle;
+    font-weight:bold;
+    font-size:14px;
+    color:#fff;
+    cursor:pointer
+}
+
+.calendly-badge-widget .calendly-badge-content.calendly-white {
+    color:#666a73
+}
+
+.calendly-badge-widget .calendly-badge-content span {
+    display:block;
+    font-size:12px
+}
+
+.calendly-spinner {
+    position:absolute;
+    top:50%;
+    left:0;
+    right:0;
+    -webkit-transform:translateY(-50%);
+    transform:translateY(-50%);
+    text-align:center;
+    z-index:-1
+}
+
+.calendly-spinner>div {
+    display:inline-block;
+    width:18px;
+    height:18px;
+    background-color:#e1e1e1;
+    border-radius:50%;
+    vertical-align:middle;
+    -webkit-animation:calendly-bouncedelay 1.4s infinite ease-in-out;
+    animation:calendly-bouncedelay 1.4s infinite ease-in-out;
+    -webkit-animation-fill-mode:both;
+    animation-fill-mode:both
+}
+
+.calendly-spinner .calendly-bounce1 {
+    -webkit-animation-delay:-0.32s;
+    animation-delay:-0.32s
+}
+
+.calendly-spinner .calendly-bounce2 {
+    -webkit-animation-delay:-0.16s;
+    animation-delay:-0.16s
+}
+
+@-webkit-keyframes calendly-bouncedelay {
+    0%,80%,100% {
+        -webkit-transform:scale(0);
+        transform:scale(0)
+    } 
+    
+    40%{
+        -webkit-transform:scale(1);
+        transform:scale(1)
+    }
+}
+
+@keyframes calendly-bouncedelay{ 
+    0%,80%,100% {
+        -webkit-transform:scale(0);
+        transform:scale(0)
+    }
+    
+    40% {
+        -webkit-transform:scale(1);
+        transform:scale(1)
+    }
+}</style><link rel="canonical" href="https://pravindev12.github.io/blogs/carbon-credit-marketplace-architecture" data-react-helmet="true"><meta name="title" content="Building a Tokenized Carbon-Credit Marketplace on Polygon: A Full Architecture Breakdown" data-react-helmet="true"><meta name="description" content="A complete walkthrough of how I designed a tokenized carbon-credit marketplace end-to-end — the contract model, retirement logic, on-chain indexing, and the deploy pipeline that ties it together." data-react-helmet="true"><meta name="author" content="Pravin Raj" data-react-helmet="true"><meta property="og:locale" content="en_US" data-react-helmet="true"><meta property="og:site_name" content="Pravin Raj" data-react-helmet="true"><meta property="og:title" content="Building a Tokenized Carbon-Credit Marketplace on Polygon: A Full Architecture Breakdown" data-react-helmet="true"><meta property="og:description" content="A complete walkthrough of how I designed a tokenized carbon-credit marketplace end-to-end — the contract model, retirement logic, on-chain indexing, and the deploy pipeline that ties it together." data-react-helmet="true"><meta property="og:type" content="website" data-react-helmet="true"><meta property="og:url" content="https://pravindev12.github.io/blogs/carbon-credit-marketplace-architecture" data-react-helmet="true"><meta property="og:image" content="/static/media/carbon-marketplace.9b7b6691f2ad70aac597bc5ac37b3d94.svg" data-react-helmet="true"><meta name="twitter:card" content="summary_large_image" data-react-helmet="true"><meta name="twitter:creator" content="@PravinDev10" data-react-helmet="true"><meta name="twitter:title" content="Building a Tokenized Carbon-Credit Marketplace on Polygon: A Full Architecture Breakdown" data-react-helmet="true"><meta name="twitter:description" content="A complete walkthrough of how I designed a tokenized carbon-credit marketplace end-to-end — the contract model, retirement logic, on-chain indexing, and the deploy pipeline that ties it together." data-react-helmet="true"><meta name="twitter:image" content="/static/media/carbon-marketplace.9b7b6691f2ad70aac597bc5ac37b3d94.svg" data-react-helmet="true"><meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" data-react-helmet="true"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"><div class="calendly-badge-widget"><div class="calendly-badge-content" style="background: rgb(245, 223, 78); color: rgb(255, 255, 255);">Schedule</div></div><header id="header" class="sticky top-0 z-50 transition-colors duration-300 bg-transparent"><div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between"><a class="no-underline font-bold text-lg text-neutral-900" href="/">PRAVIN<span class="text-brand-ink">-DEV</span></a><div class="flex items-center gap-4"><a href="tel:+919789741475" class="hidden md:inline-flex items-center gap-2 text-neutral-900 no-underline font-medium"><i class="fas fa-phone"></i>(+91) 978 974 1475</a><button type="button" aria-label="Open menu" class="w-10 h-10 flex items-center justify-center bg-transparent border-0 cursor-pointer text-neutral-900 text-xl"><i class="fas fa-bars"></i></button></div></div></header><div class="fixed inset-0 z-[60] bg-[#15161c] text-white transition-opacity duration-300 opacity-0 invisible"><button type="button" aria-label="Close menu" class="absolute top-6 right-6 w-10 h-10 flex items-center justify-center bg-transparent border-0 cursor-pointer text-white text-2xl hover:text-brand"><i class="fas fa-times"></i></button><div class="h-full flex flex-col items-center justify-center gap-8 px-6"><nav class="flex flex-col items-center gap-4 text-2xl font-semibold"><a href="#home" class="no-underline text-white hover:text-brand transition-colors">Home</a><a class="no-underline text-white hover:text-brand transition-colors" href="/blogs">Blogs</a><a href="#about" class="no-underline text-white hover:text-brand transition-colors">About Me</a><a href="#services" class="no-underline text-white hover:text-brand transition-colors">What I Do</a><a href="#resume" class="no-underline text-white hover:text-brand transition-colors">Resume</a><a href="#portfolio" class="no-underline text-white hover:text-brand transition-colors">Portfolio</a><a href="#faq" class="no-underline text-white hover:text-brand transition-colors">FAQ</a><a href="#contact" class="no-underline text-white hover:text-brand transition-colors">Contact Me</a></nav><div class="flex items-center gap-3 mt-4"><a href="https://twitter.com/PravinDev10" target="_blank" rel="noreferrer" aria-label="X (Twitter)" title="X (Twitter)" class="w-10 h-10 rounded-full bg-white/10 text-white flex items-center justify-center no-underline hover:bg-brand hover:text-neutral-900 transition-colors"><i class="fab fa-twitter"></i></a><a href="https://wa.me/919789741475" target="_blank" rel="noreferrer" aria-label="WhatsApp" title="WhatsApp" class="w-10 h-10 rounded-full bg-white/10 text-white flex items-center justify-center no-underline hover:bg-brand hover:text-neutral-900 transition-colors"><i class="fab fa-whatsapp"></i></a><a href="https://github.com/pravindev12" target="_blank" rel="noreferrer" aria-label="GitHub" title="GitHub" class="w-10 h-10 rounded-full bg-white/10 text-white flex items-center justify-center no-underline hover:bg-brand hover:text-neutral-900 transition-colors"><i class="fab fa-github"></i></a><a href="https://www.linkedin.com/in/pravin-raj-dev/" target="_blank" rel="noreferrer" aria-label="LinkedIn" title="LinkedIn" class="w-10 h-10 rounded-full bg-white/10 text-white flex items-center justify-center no-underline hover:bg-brand hover:text-neutral-900 transition-colors"><i class="fab fa-linkedin-in"></i></a><a href="mailto:pravinpersonal3@gmail.com" target="_blank" rel="noreferrer" aria-label="Email" title="Email" class="w-10 h-10 rounded-full bg-white/10 text-white flex items-center justify-center no-underline hover:bg-brand hover:text-neutral-900 transition-colors"><i class="fas fa-envelope"></i></a></div></div></div><button type="button" aria-label="Back to top" class="fixed bottom-6 right-6 z-40 w-12 h-12 rounded-full grid place-items-center shadow-lg border-0 cursor-pointer transition-opacity duration-300 opacity-0 pointer-events-none" style="background: conic-gradient(rgb(245, 223, 78) 0%, rgb(215, 215, 215) 0%);"><span class="w-9 h-9 rounded-full bg-white grid place-items-center"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="#111318" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 10.5 12 3m0 0 7.5 7.5M12 3v18"></path></svg></span></button><div class="pt-16 pb-14"><div class="max-w-3xl mx-auto px-4"><a class="inline-block mb-2.5 text-gray-500 no-underline hover:text-neutral-900" href="/blogs">← All posts</a><div class="flex flex-col gap-2.5 mt-4 mb-5"><span class="bg-black text-white w-max rounded px-2 py-1 text-sm font-light">Case Study</span><h1 class="text-3xl md:text-4xl font-semibold leading-tight">Building a Tokenized Carbon-Credit Marketplace on Polygon: A Full Architecture Breakdown</h1><p class="text-gray-500 text-sm">Jul 1, 2026 · 2 min read</p></div><img src="/static/media/carbon-marketplace.9b7b6691f2ad70aac597bc5ac37b3d94.svg" alt="Building a Tokenized Carbon-Credit Marketplace on Polygon: A Full Architecture Breakdown" class="w-full rounded-xl shadow-soft"><p class="text-lg text-gray-600 my-5">A complete walkthrough of how I designed a tokenized carbon-credit marketplace end-to-end — the contract model, retirement logic, on-chain indexing, and the deploy pipeline that ties it together.</p><div class="sticky top-16 z-30 bg-white py-4"><select class="w-full p-2.5 text-base font-medium border border-gray-300 rounded outline-none" aria-label="Jump to section"><option value="" selected="">Table of Contents</option><option value="the-on-chain-model">The on-chain model</option><option value="smart-contracts">Smart contracts</option><option value="indexing-with-the-graph">Indexing with The Graph</option><option value="the-frontend">The frontend</option><option value="testing-and-deployment">Testing and deployment</option><option value="what-id-tell-a-founder">What I'd tell a founder</option></select></div><article class="prose prose-lg max-w-none prose-headings:scroll-mt-24 prose-headings:font-semibold prose-a:text-brand-ink prose-code:before:content-none prose-code:after:content-none"><p>Carbon credits are a textbook real-world asset (RWA): valuable, tradable, and
+almost impossible to trust without a paper trail. Putting them on-chain doesn't
+just digitise them — it makes their entire lifecycle auditable. Here's how I
+architected a working marketplace, layer by layer.</p>
+<h2 id="the-on-chain-model">The on-chain model</h2>
+<p>Each credit represents one tonne of verified CO₂ offset, tied to a project,
+standard (e.g. Verra) and vintage year. That metadata has to be <strong>immutable once
+minted</strong>, so the token carries a reference to it rather than free-form fields
+anyone can edit later.</p>
+<p>I used a token contract with per-batch metadata and an explicit lifecycle:
+<code>Issued → Listed → Sold → Retired</code>. The states matter — a credit that has been
+<em>retired</em> (used to offset) must never re-enter circulation.</p>
+<h2 id="smart-contracts">Smart contracts</h2>
+<p>Three contracts, each with one job:</p>
+<ul>
+<li><strong>CreditToken</strong> — mints credits against a registered project, stores the
+immutable batch metadata, and exposes a one-way <code>retire()</code>.</li>
+<li><strong>Marketplace</strong> — escrow-based listing and settlement, with a protocol fee.</li>
+<li><strong>ProjectRegistry</strong> — the allow-list of verified issuers.</li>
+</ul>
+<p>Retirement is the part people get wrong. It's a burn with a <em>reason</em> attached:</p>
+<pre><code class="language-solidity">function retire(uint256 id, uint256 amount, string calldata beneficiary) external {
+    _burn(msg.sender, id, amount);
+    emit Retired(id, msg.sender, amount, beneficiary, block.timestamp);
+}
+</code></pre>
+<p>Once emitted, that <code>Retired</code> event is the permanent, public proof of offset.</p>
+<h2 id="indexing-with-the-graph">Indexing with The Graph</h2>
+<p>Raw contract calls can't power a marketplace UI — you can't ask an EVM node
+"show me every active listing under $20." So every mint, list, buy and retire
+event flows into a <strong>subgraph</strong> that the frontend queries with GraphQL. Buyers
+see live supply, price history, and a full provenance trail per credit, instantly.</p>
+<h2 id="the-frontend">The frontend</h2>
+<p>A React app with <strong>wagmi + RainbowKit</strong> for wallet connection and typed contract
+reads/writes. Because the subgraph does the heavy lifting, the UI stays thin: it
+reads lists from The Graph and only touches the chain to buy or retire.</p>
+<h2 id="testing-and-deployment">Testing and deployment</h2>
+<p>Contracts shipped with a full <strong>Hardhat</strong> test suite (happy paths <em>and</em> the nasty
+edges — double-retire, unauthorised mint, escrow underflow). Deployment is one
+command: it broadcasts, writes the address artifacts, and propagates them to the
+frontend and subgraph so nothing drifts out of sync between environments.</p>
+<h2 id="what-i39d-tell-a-founder">What I'd tell a founder</h2>
+<p>The token was maybe 20% of the work. The other 80% was modelling the asset's
+<em>real</em> lifecycle faithfully — provenance, one-way retirement, and an index that
+makes it usable. Get those right and you have something an auditor, a buyer, and
+a regulator can all trust. That's the whole point of putting an RWA on-chain.</p>
+</article><div class="flex flex-wrap gap-2 my-8"><a class="inline-block bg-gray-100 border border-gray-200 rounded-full px-3 py-1 text-xs text-gray-600 no-underline hover:bg-brand hover:border-brand hover:text-neutral-900 transition-colors" href="/blogs?tag=RWA">#RWA</a><a class="inline-block bg-gray-100 border border-gray-200 rounded-full px-3 py-1 text-xs text-gray-600 no-underline hover:bg-brand hover:border-brand hover:text-neutral-900 transition-colors" href="/blogs?tag=Solidity">#Solidity</a><a class="inline-block bg-gray-100 border border-gray-200 rounded-full px-3 py-1 text-xs text-gray-600 no-underline hover:bg-brand hover:border-brand hover:text-neutral-900 transition-colors" href="/blogs?tag=Polygon">#Polygon</a><a class="inline-block bg-gray-100 border border-gray-200 rounded-full px-3 py-1 text-xs text-gray-600 no-underline hover:bg-brand hover:border-brand hover:text-neutral-900 transition-colors" href="/blogs?tag=The%20Graph">#The Graph</a><a class="inline-block bg-gray-100 border border-gray-200 rounded-full px-3 py-1 text-xs text-gray-600 no-underline hover:bg-brand hover:border-brand hover:text-neutral-900 transition-colors" href="/blogs?tag=Web3">#Web3</a></div><div class="flex justify-between gap-4 border-t border-gray-200 pt-5"><a class="max-w-[48%] text-gray-500 no-underline font-medium hover:text-neutral-900" href="/blogs/rwa-tokenization-practical-guide">← RWA Tokenization Explained: A Practical Guide to Bringing Real-World Assets On-Chain</a><a class="max-w-[48%] text-right text-gray-500 no-underline font-medium hover:text-neutral-900" href="/blogs/event-driven-systems-kafka-redis-before-web3">Event-Driven at Scale: Kafka, Redis and Elasticsearch — Before I Ever Wrote a Smart Contract →</a></div></div></div><footer id="footer" class="bg-[#15161c] text-white"><div class="max-w-6xl mx-auto px-4 py-12"><div class="flex flex-col md:flex-row items-center justify-between gap-6"><div class="text-center md:text-left"><p class="text-xl font-bold tracking-wide">PRAVIN<span class="text-brand">DEV</span></p><p class="text-sm text-neutral-400 mt-1 max-w-md">White-label blockchain development partner — smart contracts, dApps, DeFi &amp; RWA.</p></div><div class="flex items-center gap-3"><a href="https://twitter.com/PravinDev10" target="_blank" rel="noreferrer" aria-label="X (Twitter)" title="X (Twitter)" class="w-10 h-10 rounded-full bg-white/10 text-white flex items-center justify-center no-underline hover:bg-brand hover:text-neutral-900 transition-colors"><i class="fab fa-twitter"></i></a><a href="https://wa.me/919789741475" target="_blank" rel="noreferrer" aria-label="WhatsApp" title="WhatsApp" class="w-10 h-10 rounded-full bg-white/10 text-white flex items-center justify-center no-underline hover:bg-brand hover:text-neutral-900 transition-colors"><i class="fab fa-whatsapp"></i></a><a href="https://www.linkedin.com/in/pravin-raj-dev/" target="_blank" rel="noreferrer" aria-label="LinkedIn" title="LinkedIn" class="w-10 h-10 rounded-full bg-white/10 text-white flex items-center justify-center no-underline hover:bg-brand hover:text-neutral-900 transition-colors"><i class="fab fa-linkedin-in"></i></a><a href="https://github.com/pravindev12" target="_blank" rel="noreferrer" aria-label="GitHub" title="GitHub" class="w-10 h-10 rounded-full bg-white/10 text-white flex items-center justify-center no-underline hover:bg-brand hover:text-neutral-900 transition-colors"><i class="fab fa-github"></i></a><a href="mailto:pravinpersonal3@gmail.com" target="_blank" rel="noreferrer" aria-label="Email" title="Email" class="w-10 h-10 rounded-full bg-white/10 text-white flex items-center justify-center no-underline hover:bg-brand hover:text-neutral-900 transition-colors"><i class="fas fa-envelope"></i></a></div></div><div class="border-t border-white/10 mt-8 pt-6 text-center text-sm text-neutral-400">Copyright © 2026 <a class="text-white font-medium no-underline hover:text-brand" href="/">Pravin Raj</a>. All Rights Reserved.</div></div></footer></div></body></html>

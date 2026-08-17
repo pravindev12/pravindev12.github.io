@@ -1,0 +1,288 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="google-site-verification" content="EXJLCBwzIMzyaOW0dpDlEqtdtEDlopwHgBHc8Y7JGa0"><script type="text/javascript">!function(n){if("/"===n.search[1]){var a=n.search.slice(1).split("&").map((function(n){return n.replace(/~and~/g,"&")})).join("?");window.history.replaceState(null,null,n.pathname.slice(0,-1)+a+n.hash)}}(window.location)</script><link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f5df4e"><meta name="author" content="Pravin Raj"><meta name="description" content="Pravin Raj — white-label blockchain development partner for agencies &amp; dev teams. Smart contracts, full-stack dApps, DeFi &amp; RWA tokenization, shipped end-to-end under your brand."><meta name="keywords" content="blockchain developer, smart contract developer, Solidity, dApp development, Web3, DeFi, RWA tokenization, white-label blockchain partner, Ethereum, Polygon"><meta property="og:type" content="website"><meta property="og:title" content="Pravin Raj — Blockchain Development Partner"><meta property="og:description" content="White-label blockchain partner for agencies &amp; dev teams. Smart contracts, dApps, DeFi &amp; RWA — shipped under your brand."><meta property="og:url" content="https://pravindev12.github.io/"><meta property="og:image" content="https://pravindev12.github.io/og-image.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:creator" content="@PravinDev10"><meta name="twitter:title" content="Pravin Raj — Blockchain Development Partner"><meta name="twitter:description" content="White-label blockchain partner for agencies &amp; dev teams. Smart contracts, dApps, DeFi &amp; RWA — shipped under your brand."><meta name="twitter:image" content="https://pravindev12.github.io/og-image.png"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/manifest.json"><script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "mainEntity": {
+      "@type": "Person",
+      "name": "Pravin Raj",
+      "alternateName": "PRAVIN-DEV",
+      "url": "https://pravindev12.github.io/",
+      "image": "https://pravindev12.github.io/logo512.png",
+      "jobTitle": "White-Label Blockchain Development Partner",
+      "description": "Blockchain developer and white-label partner for agencies and dev teams — smart contracts, full-stack dApps, DeFi and RWA tokenization, shipped end-to-end.",
+      "email": "mailto:pravinpersonal3@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressRegion": "Tamil Nadu",
+        "addressCountry": "IN"
+      },
+      "knowsAbout": [
+        "Blockchain Development",
+        "Solidity",
+        "Smart Contracts",
+        "Ethereum",
+        "Polygon",
+        "dApp Development",
+        "DeFi",
+        "RWA Tokenization",
+        "The Graph",
+        "Web3",
+        "React",
+        "Node.js"
+      ],
+      "sameAs": [
+        "https://github.com/pravindev12",
+        "https://www.linkedin.com/in/pravin-raj-dev/",
+        "https://twitter.com/PravinDev10"
+      ]
+    }
+  }</script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"><title>Event-Driven at Scale: Kafka, Redis and Elasticsearch — Before I Ever Wrote a Smart Contract — Pravin Raj</title><script defer="defer" src="/static/js/main.5b8fcffd.js"></script><link href="/static/css/main.bb5cfea2.css" rel="stylesheet"><style type="text/css">/*
+  code is extracted from Calendly's embed stylesheet: https://assets.calendly.com/assets/external/widget.css
+*/
+
+.calendly-inline-widget,
+.calendly-inline-widget *,
+.calendly-badge-widget,
+.calendly-badge-widget *,
+.calendly-overlay,
+.calendly-overlay * {
+    font-size:16px;
+    line-height:1.2em
+}
+
+.calendly-inline-widget iframe,
+.calendly-badge-widget iframe,
+.calendly-overlay iframe {
+    display:inline;
+    width:100%;
+    height:100%
+}
+
+.calendly-popup-content {
+    position:relative
+}
+
+.calendly-popup-content.calendly-mobile {
+    -webkit-overflow-scrolling:touch;
+    overflow-y:auto
+}
+
+.calendly-overlay {
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    overflow:hidden;
+    z-index:9999;
+    background-color:#a5a5a5;
+    background-color:rgba(31,31,31,0.4)
+}
+
+.calendly-overlay .calendly-close-overlay {
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0
+}
+
+.calendly-overlay .calendly-popup {
+    box-sizing:border-box;
+    position:absolute;
+    top:50%;
+    left:50%;
+    -webkit-transform:translateY(-50%) translateX(-50%);
+    transform:translateY(-50%) translateX(-50%);
+    width:80%;
+    min-width:900px;
+    max-width:1000px;
+    height:90%;
+    max-height:680px
+}
+
+@media (max-width: 975px) {
+    .calendly-overlay .calendly-popup {
+        position:fixed;
+        top:50px;
+        left:0;
+        right:0;
+        bottom:0;
+        -webkit-transform:none;
+        transform:none;
+        width:100%;
+        height:auto;
+        min-width:0;
+        max-height:none
+    }
+}
+
+.calendly-overlay .calendly-popup .calendly-popup-content {
+    height:100%;
+}
+
+.calendly-overlay .calendly-popup-close {
+    position:absolute;
+    top:25px;
+    right:25px;
+    color:#fff;
+    width:19px;
+    height:19px;
+    cursor:pointer;
+    background:url(https://assets.calendly.com/assets/external/close-icon.svg) no-repeat;
+    background-size:contain
+}
+
+@media (max-width: 975px) {
+    .calendly-overlay .calendly-popup-close {
+        top:15px;
+        right:15px
+    }
+}
+
+.calendly-badge-widget {
+    position:fixed;
+    right:20px;
+    bottom:15px;
+    z-index:9998
+}
+
+.calendly-badge-widget .calendly-badge-content {
+    display:table-cell;
+    width:auto;
+    height:45px;
+    padding:0 30px;
+    border-radius:25px;
+    box-shadow:rgba(0,0,0,0.25) 0 2px 5px;
+    font-family:sans-serif;
+    text-align:center;
+    vertical-align:middle;
+    font-weight:bold;
+    font-size:14px;
+    color:#fff;
+    cursor:pointer
+}
+
+.calendly-badge-widget .calendly-badge-content.calendly-white {
+    color:#666a73
+}
+
+.calendly-badge-widget .calendly-badge-content span {
+    display:block;
+    font-size:12px
+}
+
+.calendly-spinner {
+    position:absolute;
+    top:50%;
+    left:0;
+    right:0;
+    -webkit-transform:translateY(-50%);
+    transform:translateY(-50%);
+    text-align:center;
+    z-index:-1
+}
+
+.calendly-spinner>div {
+    display:inline-block;
+    width:18px;
+    height:18px;
+    background-color:#e1e1e1;
+    border-radius:50%;
+    vertical-align:middle;
+    -webkit-animation:calendly-bouncedelay 1.4s infinite ease-in-out;
+    animation:calendly-bouncedelay 1.4s infinite ease-in-out;
+    -webkit-animation-fill-mode:both;
+    animation-fill-mode:both
+}
+
+.calendly-spinner .calendly-bounce1 {
+    -webkit-animation-delay:-0.32s;
+    animation-delay:-0.32s
+}
+
+.calendly-spinner .calendly-bounce2 {
+    -webkit-animation-delay:-0.16s;
+    animation-delay:-0.16s
+}
+
+@-webkit-keyframes calendly-bouncedelay {
+    0%,80%,100% {
+        -webkit-transform:scale(0);
+        transform:scale(0)
+    } 
+    
+    40%{
+        -webkit-transform:scale(1);
+        transform:scale(1)
+    }
+}
+
+@keyframes calendly-bouncedelay{ 
+    0%,80%,100% {
+        -webkit-transform:scale(0);
+        transform:scale(0)
+    }
+    
+    40% {
+        -webkit-transform:scale(1);
+        transform:scale(1)
+    }
+}</style><link rel="canonical" href="https://pravindev12.github.io/blogs/event-driven-systems-kafka-redis-before-web3" data-react-helmet="true"><meta name="title" content="Event-Driven at Scale: Kafka, Redis and Elasticsearch — Before I Ever Wrote a Smart Contract" data-react-helmet="true"><meta name="description" content="Before blockchain, I spent years building production event-driven systems — Kafka, Redis, Elasticsearch, Spring Boot. The discipline behind that work is the same discipline that goes into shipping reliable on-chain systems today." data-react-helmet="true"><meta name="author" content="Pravin Raj" data-react-helmet="true"><meta property="og:locale" content="en_US" data-react-helmet="true"><meta property="og:site_name" content="Pravin Raj" data-react-helmet="true"><meta property="og:title" content="Event-Driven at Scale: Kafka, Redis and Elasticsearch — Before I Ever Wrote a Smart Contract" data-react-helmet="true"><meta property="og:description" content="Before blockchain, I spent years building production event-driven systems — Kafka, Redis, Elasticsearch, Spring Boot. The discipline behind that work is the same discipline that goes into shipping reliable on-chain systems today." data-react-helmet="true"><meta property="og:type" content="website" data-react-helmet="true"><meta property="og:url" content="https://pravindev12.github.io/blogs/event-driven-systems-kafka-redis-before-web3" data-react-helmet="true"><meta property="og:image" content="/static/media/kafka-redis-systems.4914abfb39de1902fdad6969bca6ffd1.svg" data-react-helmet="true"><meta name="twitter:card" content="summary_large_image" data-react-helmet="true"><meta name="twitter:creator" content="@PravinDev10" data-react-helmet="true"><meta name="twitter:title" content="Event-Driven at Scale: Kafka, Redis and Elasticsearch — Before I Ever Wrote a Smart Contract" data-react-helmet="true"><meta name="twitter:description" content="Before blockchain, I spent years building production event-driven systems — Kafka, Redis, Elasticsearch, Spring Boot. The discipline behind that work is the same discipline that goes into shipping reliable on-chain systems today." data-react-helmet="true"><meta name="twitter:image" content="/static/media/kafka-redis-systems.4914abfb39de1902fdad6969bca6ffd1.svg" data-react-helmet="true"><meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" data-react-helmet="true"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"><div class="calendly-badge-widget"><div class="calendly-badge-content" style="background: rgb(245, 223, 78); color: rgb(255, 255, 255);">Schedule</div></div><header id="header" class="sticky top-0 z-50 transition-colors duration-300 bg-transparent"><div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between"><a class="no-underline font-bold text-lg text-neutral-900" href="/">PRAVIN<span class="text-brand-ink">-DEV</span></a><div class="flex items-center gap-4"><a href="tel:+919789741475" class="hidden md:inline-flex items-center gap-2 text-neutral-900 no-underline font-medium"><i class="fas fa-phone"></i>(+91) 978 974 1475</a><button type="button" aria-label="Open menu" class="w-10 h-10 flex items-center justify-center bg-transparent border-0 cursor-pointer text-neutral-900 text-xl"><i class="fas fa-bars"></i></button></div></div></header><div class="fixed inset-0 z-[60] bg-[#15161c] text-white transition-opacity duration-300 opacity-0 invisible"><button type="button" aria-label="Close menu" class="absolute top-6 right-6 w-10 h-10 flex items-center justify-center bg-transparent border-0 cursor-pointer text-white text-2xl hover:text-brand"><i class="fas fa-times"></i></button><div class="h-full flex flex-col items-center justify-center gap-8 px-6"><nav class="flex flex-col items-center gap-4 text-2xl font-semibold"><a href="#home" class="no-underline text-white hover:text-brand transition-colors">Home</a><a class="no-underline text-white hover:text-brand transition-colors" href="/blogs">Blogs</a><a href="#about" class="no-underline text-white hover:text-brand transition-colors">About Me</a><a href="#services" class="no-underline text-white hover:text-brand transition-colors">What I Do</a><a href="#resume" class="no-underline text-white hover:text-brand transition-colors">Resume</a><a href="#portfolio" class="no-underline text-white hover:text-brand transition-colors">Portfolio</a><a href="#faq" class="no-underline text-white hover:text-brand transition-colors">FAQ</a><a href="#contact" class="no-underline text-white hover:text-brand transition-colors">Contact Me</a></nav><div class="flex items-center gap-3 mt-4"><a href="https://twitter.com/PravinDev10" target="_blank" rel="noreferrer" aria-label="X (Twitter)" title="X (Twitter)" class="w-10 h-10 rounded-full bg-white/10 text-white flex items-center justify-center no-underline hover:bg-brand hover:text-neutral-900 transition-colors"><i class="fab fa-twitter"></i></a><a href="https://wa.me/919789741475" target="_blank" rel="noreferrer" aria-label="WhatsApp" title="WhatsApp" class="w-10 h-10 rounded-full bg-white/10 text-white flex items-center justify-center no-underline hover:bg-brand hover:text-neutral-900 transition-colors"><i class="fab fa-whatsapp"></i></a><a href="https://github.com/pravindev12" target="_blank" rel="noreferrer" aria-label="GitHub" title="GitHub" class="w-10 h-10 rounded-full bg-white/10 text-white flex items-center justify-center no-underline hover:bg-brand hover:text-neutral-900 transition-colors"><i class="fab fa-github"></i></a><a href="https://www.linkedin.com/in/pravin-raj-dev/" target="_blank" rel="noreferrer" aria-label="LinkedIn" title="LinkedIn" class="w-10 h-10 rounded-full bg-white/10 text-white flex items-center justify-center no-underline hover:bg-brand hover:text-neutral-900 transition-colors"><i class="fab fa-linkedin-in"></i></a><a href="mailto:pravinpersonal3@gmail.com" target="_blank" rel="noreferrer" aria-label="Email" title="Email" class="w-10 h-10 rounded-full bg-white/10 text-white flex items-center justify-center no-underline hover:bg-brand hover:text-neutral-900 transition-colors"><i class="fas fa-envelope"></i></a></div></div></div><button type="button" aria-label="Back to top" class="fixed bottom-6 right-6 z-40 w-12 h-12 rounded-full grid place-items-center shadow-lg border-0 cursor-pointer transition-opacity duration-300 opacity-0 pointer-events-none" style="background: conic-gradient(rgb(245, 223, 78) 0%, rgb(215, 215, 215) 0%);"><span class="w-9 h-9 rounded-full bg-white grid place-items-center"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="#111318" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 10.5 12 3m0 0 7.5 7.5M12 3v18"></path></svg></span></button><div class="pt-16 pb-14"><div class="max-w-3xl mx-auto px-4"><a class="inline-block mb-2.5 text-gray-500 no-underline hover:text-neutral-900" href="/blogs">← All posts</a><div class="flex flex-col gap-2.5 mt-4 mb-5"><span class="bg-black text-white w-max rounded px-2 py-1 text-sm font-light">Case Study</span><h1 class="text-3xl md:text-4xl font-semibold leading-tight">Event-Driven at Scale: Kafka, Redis and Elasticsearch — Before I Ever Wrote a Smart Contract</h1><p class="text-gray-500 text-sm">Aug 1, 2026 · 3 min read</p></div><img src="/static/media/kafka-redis-systems.4914abfb39de1902fdad6969bca6ffd1.svg" alt="Event-Driven at Scale: Kafka, Redis and Elasticsearch — Before I Ever Wrote a Smart Contract" class="w-full rounded-xl shadow-soft"><p class="text-lg text-gray-600 my-5">Before blockchain, I spent years building production event-driven systems — Kafka, Redis, Elasticsearch, Spring Boot. The discipline behind that work is the same discipline that goes into shipping reliable on-chain systems today.</p><div class="sticky top-16 z-30 bg-white py-4"><select class="w-full p-2.5 text-base font-medium border border-gray-300 rounded outline-none" aria-label="Jump to section"><option value="" selected="">Table of Contents</option><option value="why-you-reach-for-kafka-in-the-first-place">Why you reach for Kafka in the first place</option><option value="where-redis-actually-earns-its-place">Where Redis actually earns its place</option><option value="elasticsearch-search-is-not-a-database-query">Elasticsearch: search is not a database query</option><option value="the-part-that-carries-over-directly-to-blockchain-work">The part that carries over directly to blockchain work</option></select></div><article class="prose prose-lg max-w-none prose-headings:scroll-mt-24 prose-headings:font-semibold prose-a:text-brand-ink prose-code:before:content-none prose-code:after:content-none"><p>Before "white-label blockchain partner" was on my profile, I was a senior engineer
+building production distributed systems — Angular front-ends, Node.js and Java
+Spring Boot services, Kafka for event streaming, Redis for caching, Elasticsearch
+for search, all running on Docker. That work at Oasys Cybernetics (2019–2022) is
+where the engineering discipline I now bring to smart contracts actually comes from.</p>
+<p>Here's how those pieces fit together, and why the pattern matters even more once
+you're working on-chain.</p>
+<h2 id="why-you-reach-for-kafka-in-the-first-place">Why you reach for Kafka in the first place</h2>
+<p>The moment more than one service needs to react to the same event — a user
+action, a status change, a new record — polling and direct service-to-service
+calls stop scaling. Kafka decouples "something happened" from "who needs to know."</p>
+<p>A producer writes an event once. Every consumer that cares — search indexing,
+notifications, analytics, a downstream microservice — reads it independently, at
+its own pace, without the producer knowing or caring who's listening.</p>
+<pre><code>Producer → Kafka topic → [Search indexer, Notification service, Analytics, ...]
+</code></pre>
+<p>The two properties that make this worth the operational overhead:</p>
+<ul>
+<li><strong>Buffering</strong> — a slow or temporarily-down consumer doesn't take down the
+producer. Kafka holds the backlog; the consumer catches up when it's ready.</li>
+<li><strong>Replay</strong> — because events are retained (not just delivered-and-discarded),
+you can rebuild a consumer's state from scratch by replaying the log. That
+turns "the search index got corrupted" from an incident into a script.</li>
+</ul>
+<h2 id="where-redis-actually-earns-its-place">Where Redis actually earns its place</h2>
+<p>Redis isn't "a cache" in the abstract — it earns its place by sitting in front
+of whichever read is both <strong>hot</strong> and <strong>expensive</strong>. Session state, rate-limit
+counters, a computed leaderboard, a frequently-hit lookup that would otherwise
+hammer the primary database on every request.</p>
+<p>The failure mode to design around isn't "Redis is down" (that's the easy case —
+fail through to the source of truth). It's <strong>stale data silently served as
+correct</strong> — so every cache entry needs an explicit invalidation path, not just
+a TTL you hope is short enough.</p>
+<h2 id="elasticsearch-search-is-not-a-database-query">Elasticsearch: search is not a database query</h2>
+<p>Full-text search, faceted filtering, relevance ranking — a relational database
+can technically do some of this, but not at the latency or flexibility a real
+search experience needs. Elasticsearch consumes the same event stream Kafka is
+already carrying and builds a purpose-built, denormalized index for exactly the
+queries your UI actually asks.</p>
+<p>The pattern across all three tools is the same: <strong>don't make one system do
+everything.</strong> Let the primary database be the source of truth, and let
+purpose-built systems (cache, search index, analytics store) stay in sync by
+consuming events, not by being queried directly by every part of the app.</p>
+<h2 id="the-part-that-carries-over-directly-to-blockchain-work">The part that carries over directly to blockchain work</h2>
+<p>If that Kafka pattern sounds familiar, it should — <strong>consuming an event stream
+to build derived, queryable state is exactly what The Graph does for a smart
+contract.</strong> A contract emits events the same way a service publishes to a
+topic; a subgraph's mappings are a consumer, just like an Elasticsearch indexer
+is a consumer. The architecture is the same shape — only the source of truth
+changed from a database to a chain.</p>
+<p>What also carries over: the discipline. In a Kafka consumer, a handler that
+isn't idempotent means replaying the log corrupts your data. In a smart
+contract, a function that isn't safe against being called twice — like
+retiring the same credit twice — means an attacker doesn't need a fancy exploit,
+just a normal call at the wrong time. Same failure mode, same fix: design for
+the replay, not just the happy path.</p>
+<p>That's the throughline from Kafka topics to Solidity contracts: the technology
+changed, the engineering rigor didn't.</p>
+</article><div class="flex flex-wrap gap-2 my-8"><a class="inline-block bg-gray-100 border border-gray-200 rounded-full px-3 py-1 text-xs text-gray-600 no-underline hover:bg-brand hover:border-brand hover:text-neutral-900 transition-colors" href="/blogs?tag=Kafka">#Kafka</a><a class="inline-block bg-gray-100 border border-gray-200 rounded-full px-3 py-1 text-xs text-gray-600 no-underline hover:bg-brand hover:border-brand hover:text-neutral-900 transition-colors" href="/blogs?tag=Redis">#Redis</a><a class="inline-block bg-gray-100 border border-gray-200 rounded-full px-3 py-1 text-xs text-gray-600 no-underline hover:bg-brand hover:border-brand hover:text-neutral-900 transition-colors" href="/blogs?tag=Elasticsearch">#Elasticsearch</a><a class="inline-block bg-gray-100 border border-gray-200 rounded-full px-3 py-1 text-xs text-gray-600 no-underline hover:bg-brand hover:border-brand hover:text-neutral-900 transition-colors" href="/blogs?tag=Microservices">#Microservices</a><a class="inline-block bg-gray-100 border border-gray-200 rounded-full px-3 py-1 text-xs text-gray-600 no-underline hover:bg-brand hover:border-brand hover:text-neutral-900 transition-colors" href="/blogs?tag=Backend">#Backend</a><a class="inline-block bg-gray-100 border border-gray-200 rounded-full px-3 py-1 text-xs text-gray-600 no-underline hover:bg-brand hover:border-brand hover:text-neutral-900 transition-colors" href="/blogs?tag=Distributed%20Systems">#Distributed Systems</a></div><div class="flex justify-between gap-4 border-t border-gray-200 pt-5"><a class="max-w-[48%] text-gray-500 no-underline font-medium hover:text-neutral-900" href="/blogs/carbon-credit-marketplace-architecture">← Building a Tokenized Carbon-Credit Marketplace on Polygon: A Full Architecture Breakdown</a><a class="max-w-[48%] text-right text-gray-500 no-underline font-medium hover:text-neutral-900" href="/blogs/testing-dapps-with-playwright">Testing dApps with Playwright: Real Test Cases and the Workarounds Nobody Documents →</a></div></div></div><footer id="footer" class="bg-[#15161c] text-white"><div class="max-w-6xl mx-auto px-4 py-12"><div class="flex flex-col md:flex-row items-center justify-between gap-6"><div class="text-center md:text-left"><p class="text-xl font-bold tracking-wide">PRAVIN<span class="text-brand">DEV</span></p><p class="text-sm text-neutral-400 mt-1 max-w-md">White-label blockchain development partner — smart contracts, dApps, DeFi &amp; RWA.</p></div><div class="flex items-center gap-3"><a href="https://twitter.com/PravinDev10" target="_blank" rel="noreferrer" aria-label="X (Twitter)" title="X (Twitter)" class="w-10 h-10 rounded-full bg-white/10 text-white flex items-center justify-center no-underline hover:bg-brand hover:text-neutral-900 transition-colors"><i class="fab fa-twitter"></i></a><a href="https://wa.me/919789741475" target="_blank" rel="noreferrer" aria-label="WhatsApp" title="WhatsApp" class="w-10 h-10 rounded-full bg-white/10 text-white flex items-center justify-center no-underline hover:bg-brand hover:text-neutral-900 transition-colors"><i class="fab fa-whatsapp"></i></a><a href="https://www.linkedin.com/in/pravin-raj-dev/" target="_blank" rel="noreferrer" aria-label="LinkedIn" title="LinkedIn" class="w-10 h-10 rounded-full bg-white/10 text-white flex items-center justify-center no-underline hover:bg-brand hover:text-neutral-900 transition-colors"><i class="fab fa-linkedin-in"></i></a><a href="https://github.com/pravindev12" target="_blank" rel="noreferrer" aria-label="GitHub" title="GitHub" class="w-10 h-10 rounded-full bg-white/10 text-white flex items-center justify-center no-underline hover:bg-brand hover:text-neutral-900 transition-colors"><i class="fab fa-github"></i></a><a href="mailto:pravinpersonal3@gmail.com" target="_blank" rel="noreferrer" aria-label="Email" title="Email" class="w-10 h-10 rounded-full bg-white/10 text-white flex items-center justify-center no-underline hover:bg-brand hover:text-neutral-900 transition-colors"><i class="fas fa-envelope"></i></a></div></div><div class="border-t border-white/10 mt-8 pt-6 text-center text-sm text-neutral-400">Copyright © 2026 <a class="text-white font-medium no-underline hover:text-brand" href="/">Pravin Raj</a>. All Rights Reserved.</div></div></footer></div></body></html>
