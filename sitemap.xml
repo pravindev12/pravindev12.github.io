@@ -6,37 +6,37 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://pravindev12.github.io/blogs</loc>
+    <loc>https://pravindev12.github.io/blogs/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://pravindev12.github.io/blogs/carbon-credit-marketplace-architecture</loc>
+    <loc>https://pravindev12.github.io/blogs/carbon-credit-marketplace-architecture/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://pravindev12.github.io/blogs/rwa-tokenization-practical-guide</loc>
+    <loc>https://pravindev12.github.io/blogs/event-driven-systems-kafka-redis-before-web3/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://pravindev12.github.io/blogs/smart-contract-testing-security-checklist</loc>
+    <loc>https://pravindev12.github.io/blogs/rwa-tokenization-practical-guide/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://pravindev12.github.io/blogs/why-your-dapp-feels-slow-the-graph</loc>
+    <loc>https://pravindev12.github.io/blogs/smart-contract-testing-security-checklist/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://pravindev12.github.io/blogs/event-driven-systems-kafka-redis-before-web3</loc>
+    <loc>https://pravindev12.github.io/blogs/testing-dapps-with-playwright/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://pravindev12.github.io/blogs/testing-dapps-with-playwright</loc>
+    <loc>https://pravindev12.github.io/blogs/why-your-dapp-feels-slow-the-graph/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
