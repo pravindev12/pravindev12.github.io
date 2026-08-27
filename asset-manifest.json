@@ -1,12 +1,13 @@
 {
   "files": {
     "main.css": "/static/css/main.bb5cfea2.css",
-    "main.js": "/static/js/main.83592e54.js",
+    "main.js": "/static/js/main.05a8638b.js",
     "static/media/pravin.png": "/static/media/pravin.3bc6e293a3c398d82d3b.png",
     "static/media/faq.png": "/static/media/faq.af3e9845f0097bec3fee.png",
     "static/media/upexcise.png": "/static/media/upexcise.d18db34983bf077d4289.png",
     "index.html": "/index.html",
     "static/media/the-graph-indexing.svg": "/static/media/the-graph-indexing.c26d1cf22fc78ef432c41f81a5b0b038.svg",
+    "static/media/automated-portfolio-manager.svg": "/static/media/automated-portfolio-manager.7f1f14eefa36bf79a1e4f39110638e59.svg",
     "static/media/kafka-redis-systems.svg": "/static/media/kafka-redis-systems.4914abfb39de1902fdad6969bca6ffd1.svg",
     "static/media/rwa-tokenization.svg": "/static/media/rwa-tokenization.0acc9d5a2e7a86e3647e57d399b5f2bd.svg",
     "static/media/smart-contract-security.svg": "/static/media/smart-contract-security.6eddbb22a6a60d89daae5417fd343d16.svg",
@@ -16,10 +17,10 @@
     "static/media/agri-erpnext.svg": "/static/media/agri-erpnext.da71ac9059b399ba3a7863773c7b6083.svg",
     "static/media/pharmachain.svg": "/static/media/pharmachain.22d19ccbb53bb6dd4bf48203b2436465.svg",
     "main.bb5cfea2.css.map": "/static/css/main.bb5cfea2.css.map",
-    "main.83592e54.js.map": "/static/js/main.83592e54.js.map"
+    "main.05a8638b.js.map": "/static/js/main.05a8638b.js.map"
   },
   "entrypoints": [
     "static/css/main.bb5cfea2.css",
-    "static/js/main.83592e54.js"
+    "static/js/main.05a8638b.js"
   ]
 }

@@ -1,0 +1,378 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="google-site-verification" content="EXJLCBwzIMzyaOW0dpDlEqtdtEDlopwHgBHc8Y7JGa0"><script type="text/javascript">!function(n){if("/"===n.search[1]){var a=n.search.slice(1).split("&").map((function(n){return n.replace(/~and~/g,"&")})).join("?");window.history.replaceState(null,null,n.pathname.slice(0,-1)+a+n.hash)}}(window.location)</script><link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f5df4e"><meta name="author" content="Pravin Raj"><meta name="description" content="Pravin Raj — white-label blockchain development partner for agencies &amp; dev teams. Smart contracts, full-stack dApps, DeFi &amp; RWA tokenization, shipped end-to-end under your brand."><meta name="keywords" content="blockchain developer, smart contract developer, Solidity, dApp development, Web3, DeFi, RWA tokenization, white-label blockchain partner, Ethereum, Polygon"><meta property="og:type" content="website"><meta property="og:title" content="Pravin Raj — Blockchain Development Partner"><meta property="og:description" content="White-label blockchain partner for agencies &amp; dev teams. Smart contracts, dApps, DeFi &amp; RWA — shipped under your brand."><meta property="og:url" content="https://pravindev12.github.io/"><meta property="og:image" content="https://pravindev12.github.io/og-image.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:creator" content="@PravinDev10"><meta name="twitter:title" content="Pravin Raj — Blockchain Development Partner"><meta name="twitter:description" content="White-label blockchain partner for agencies &amp; dev teams. Smart contracts, dApps, DeFi &amp; RWA — shipped under your brand."><meta name="twitter:image" content="https://pravindev12.github.io/og-image.png"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/manifest.json"><script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "mainEntity": {
+      "@type": "Person",
+      "name": "Pravin Raj",
+      "alternateName": "PRAVIN-DEV",
+      "url": "https://pravindev12.github.io/",
+      "image": "https://pravindev12.github.io/logo512.png",
+      "jobTitle": "White-Label Blockchain Development Partner",
+      "description": "Blockchain developer and white-label partner for agencies and dev teams — smart contracts, full-stack dApps, DeFi and RWA tokenization, shipped end-to-end.",
+      "email": "mailto:pravinpersonal3@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressRegion": "Tamil Nadu",
+        "addressCountry": "IN"
+      },
+      "knowsAbout": [
+        "Blockchain Development",
+        "Solidity",
+        "Smart Contracts",
+        "Ethereum",
+        "Polygon",
+        "dApp Development",
+        "DeFi",
+        "RWA Tokenization",
+        "The Graph",
+        "Web3",
+        "React",
+        "Node.js"
+      ],
+      "sameAs": [
+        "https://github.com/pravindev12",
+        "https://www.linkedin.com/in/pravin-raj-dev/",
+        "https://twitter.com/PravinDev10"
+      ]
+    }
+  }</script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"><title>Building an Automated Portfolio Manager: Chainlink Automation, Functions, and Data Feeds Working Together — Pravin Raj</title><script defer="defer" src="/static/js/main.05a8638b.js"></script><link href="/static/css/main.bb5cfea2.css" rel="stylesheet"><style type="text/css">/*
+  code is extracted from Calendly's embed stylesheet: https://assets.calendly.com/assets/external/widget.css
+*/
+
+.calendly-inline-widget,
+.calendly-inline-widget *,
+.calendly-badge-widget,
+.calendly-badge-widget *,
+.calendly-overlay,
+.calendly-overlay * {
+    font-size:16px;
+    line-height:1.2em
+}
+
+.calendly-inline-widget iframe,
+.calendly-badge-widget iframe,
+.calendly-overlay iframe {
+    display:inline;
+    width:100%;
+    height:100%
+}
+
+.calendly-popup-content {
+    position:relative
+}
+
+.calendly-popup-content.calendly-mobile {
+    -webkit-overflow-scrolling:touch;
+    overflow-y:auto
+}
+
+.calendly-overlay {
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    overflow:hidden;
+    z-index:9999;
+    background-color:#a5a5a5;
+    background-color:rgba(31,31,31,0.4)
+}
+
+.calendly-overlay .calendly-close-overlay {
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0
+}
+
+.calendly-overlay .calendly-popup {
+    box-sizing:border-box;
+    position:absolute;
+    top:50%;
+    left:50%;
+    -webkit-transform:translateY(-50%) translateX(-50%);
+    transform:translateY(-50%) translateX(-50%);
+    width:80%;
+    min-width:900px;
+    max-width:1000px;
+    height:90%;
+    max-height:680px
+}
+
+@media (max-width: 975px) {
+    .calendly-overlay .calendly-popup {
+        position:fixed;
+        top:50px;
+        left:0;
+        right:0;
+        bottom:0;
+        -webkit-transform:none;
+        transform:none;
+        width:100%;
+        height:auto;
+        min-width:0;
+        max-height:none
+    }
+}
+
+.calendly-overlay .calendly-popup .calendly-popup-content {
+    height:100%;
+}
+
+.calendly-overlay .calendly-popup-close {
+    position:absolute;
+    top:25px;
+    right:25px;
+    color:#fff;
+    width:19px;
+    height:19px;
+    cursor:pointer;
+    background:url(https://assets.calendly.com/assets/external/close-icon.svg) no-repeat;
+    background-size:contain
+}
+
+@media (max-width: 975px) {
+    .calendly-overlay .calendly-popup-close {
+        top:15px;
+        right:15px
+    }
+}
+
+.calendly-badge-widget {
+    position:fixed;
+    right:20px;
+    bottom:15px;
+    z-index:9998
+}
+
+.calendly-badge-widget .calendly-badge-content {
+    display:table-cell;
+    width:auto;
+    height:45px;
+    padding:0 30px;
+    border-radius:25px;
+    box-shadow:rgba(0,0,0,0.25) 0 2px 5px;
+    font-family:sans-serif;
+    text-align:center;
+    vertical-align:middle;
+    font-weight:bold;
+    font-size:14px;
+    color:#fff;
+    cursor:pointer
+}
+
+.calendly-badge-widget .calendly-badge-content.calendly-white {
+    color:#666a73
+}
+
+.calendly-badge-widget .calendly-badge-content span {
+    display:block;
+    font-size:12px
+}
+
+.calendly-spinner {
+    position:absolute;
+    top:50%;
+    left:0;
+    right:0;
+    -webkit-transform:translateY(-50%);
+    transform:translateY(-50%);
+    text-align:center;
+    z-index:-1
+}
+
+.calendly-spinner>div {
+    display:inline-block;
+    width:18px;
+    height:18px;
+    background-color:#e1e1e1;
+    border-radius:50%;
+    vertical-align:middle;
+    -webkit-animation:calendly-bouncedelay 1.4s infinite ease-in-out;
+    animation:calendly-bouncedelay 1.4s infinite ease-in-out;
+    -webkit-animation-fill-mode:both;
+    animation-fill-mode:both
+}
+
+.calendly-spinner .calendly-bounce1 {
+    -webkit-animation-delay:-0.32s;
+    animation-delay:-0.32s
+}
+
+.calendly-spinner .calendly-bounce2 {
+    -webkit-animation-delay:-0.16s;
+    animation-delay:-0.16s
+}
+
+@-webkit-keyframes calendly-bouncedelay {
+    0%,80%,100% {
+        -webkit-transform:scale(0);
+        transform:scale(0)
+    } 
+    
+    40%{
+        -webkit-transform:scale(1);
+        transform:scale(1)
+    }
+}
+
+@keyframes calendly-bouncedelay{ 
+    0%,80%,100% {
+        -webkit-transform:scale(0);
+        transform:scale(0)
+    }
+    
+    40% {
+        -webkit-transform:scale(1);
+        transform:scale(1)
+    }
+}</style><link rel="canonical" href="https://pravindev12.github.io/blogs/automated-portfolio-manager-chainlink/" data-react-helmet="true"><meta name="title" content="Building an Automated Portfolio Manager: Chainlink Automation, Functions, and Data Feeds Working Together" data-react-helmet="true"><meta name="description" content="A hands-on build following Chainlink's own Automated Portfolio Manager pattern — Automation triggers Functions to fetch off-chain market signals, which drive an on-chain rebalance across a gold/BTC/ETH portfolio. 17 tests, full architecture breakdown, and an honest account of what's mocked vs. real." data-react-helmet="true"><meta name="author" content="Pravin Raj" data-react-helmet="true"><meta property="og:locale" content="en_US" data-react-helmet="true"><meta property="og:site_name" content="Pravin Raj" data-react-helmet="true"><meta property="og:title" content="Building an Automated Portfolio Manager: Chainlink Automation, Functions, and Data Feeds Working Together" data-react-helmet="true"><meta property="og:description" content="A hands-on build following Chainlink's own Automated Portfolio Manager pattern — Automation triggers Functions to fetch off-chain market signals, which drive an on-chain rebalance across a gold/BTC/ETH portfolio. 17 tests, full architecture breakdown, and an honest account of what's mocked vs. real." data-react-helmet="true"><meta property="og:type" content="website" data-react-helmet="true"><meta property="og:url" content="https://pravindev12.github.io/blogs/automated-portfolio-manager-chainlink/" data-react-helmet="true"><meta property="og:image" content="/static/media/automated-portfolio-manager.7f1f14eefa36bf79a1e4f39110638e59.svg" data-react-helmet="true"><meta name="twitter:card" content="summary_large_image" data-react-helmet="true"><meta name="twitter:creator" content="@PravinDev10" data-react-helmet="true"><meta name="twitter:title" content="Building an Automated Portfolio Manager: Chainlink Automation, Functions, and Data Feeds Working Together" data-react-helmet="true"><meta name="twitter:description" content="A hands-on build following Chainlink's own Automated Portfolio Manager pattern — Automation triggers Functions to fetch off-chain market signals, which drive an on-chain rebalance across a gold/BTC/ETH portfolio. 17 tests, full architecture breakdown, and an honest account of what's mocked vs. real." data-react-helmet="true"><meta name="twitter:image" content="/static/media/automated-portfolio-manager.7f1f14eefa36bf79a1e4f39110638e59.svg" data-react-helmet="true"><meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" data-react-helmet="true"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"><div class="calendly-badge-widget"><div class="calendly-badge-content" style="background: rgb(245, 223, 78); color: rgb(255, 255, 255);">Schedule</div></div><header id="header" class="sticky top-0 z-50 transition-colors duration-300 bg-transparent"><div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between"><a class="no-underline font-bold text-lg text-neutral-900" href="/">PRAVIN<span class="text-brand-ink">-DEV</span></a><div class="flex items-center gap-4"><a href="tel:+919789741475" class="hidden md:inline-flex items-center gap-2 text-neutral-900 no-underline font-medium"><i class="fas fa-phone"></i>(+91) 978 974 1475</a><button type="button" aria-label="Open menu" class="w-10 h-10 flex items-center justify-center bg-transparent border-0 cursor-pointer text-neutral-900 text-xl"><i class="fas fa-bars"></i></button></div></div></header><div class="fixed inset-0 z-[60] bg-[#15161c] text-white transition-opacity duration-300 opacity-0 invisible"><button type="button" aria-label="Close menu" class="absolute top-6 right-6 w-10 h-10 flex items-center justify-center bg-transparent border-0 cursor-pointer text-white text-2xl hover:text-brand"><i class="fas fa-times"></i></button><div class="h-full flex flex-col items-center justify-center gap-8 px-6"><nav class="flex flex-col items-center gap-4 text-2xl font-semibold"><a href="#home" class="no-underline text-white hover:text-brand transition-colors">Home</a><a class="no-underline text-white hover:text-brand transition-colors" href="/blogs">Blogs</a><a href="#about" class="no-underline text-white hover:text-brand transition-colors">About Me</a><a href="#services" class="no-underline text-white hover:text-brand transition-colors">What I Do</a><a href="#resume" class="no-underline text-white hover:text-brand transition-colors">Resume</a><a href="#portfolio" class="no-underline text-white hover:text-brand transition-colors">Portfolio</a><a href="#faq" class="no-underline text-white hover:text-brand transition-colors">FAQ</a><a href="#contact" class="no-underline text-white hover:text-brand transition-colors">Contact Me</a></nav><div class="flex items-center gap-3 mt-4"><a href="https://twitter.com/PravinDev10" target="_blank" rel="noreferrer" aria-label="X (Twitter)" title="X (Twitter)" class="w-10 h-10 rounded-full bg-white/10 text-white flex items-center justify-center no-underline hover:bg-brand hover:text-neutral-900 transition-colors"><i class="fab fa-twitter"></i></a><a href="https://wa.me/919789741475" target="_blank" rel="noreferrer" aria-label="WhatsApp" title="WhatsApp" class="w-10 h-10 rounded-full bg-white/10 text-white flex items-center justify-center no-underline hover:bg-brand hover:text-neutral-900 transition-colors"><i class="fab fa-whatsapp"></i></a><a href="https://github.com/pravindev12" target="_blank" rel="noreferrer" aria-label="GitHub" title="GitHub" class="w-10 h-10 rounded-full bg-white/10 text-white flex items-center justify-center no-underline hover:bg-brand hover:text-neutral-900 transition-colors"><i class="fab fa-github"></i></a><a href="https://www.linkedin.com/in/pravin-raj-dev/" target="_blank" rel="noreferrer" aria-label="LinkedIn" title="LinkedIn" class="w-10 h-10 rounded-full bg-white/10 text-white flex items-center justify-center no-underline hover:bg-brand hover:text-neutral-900 transition-colors"><i class="fab fa-linkedin-in"></i></a><a href="mailto:pravinpersonal3@gmail.com" target="_blank" rel="noreferrer" aria-label="Email" title="Email" class="w-10 h-10 rounded-full bg-white/10 text-white flex items-center justify-center no-underline hover:bg-brand hover:text-neutral-900 transition-colors"><i class="fas fa-envelope"></i></a></div></div></div><button type="button" aria-label="Back to top" class="fixed bottom-6 right-6 z-40 w-12 h-12 rounded-full grid place-items-center shadow-lg border-0 cursor-pointer transition-opacity duration-300 opacity-0 pointer-events-none" style="background: conic-gradient(rgb(245, 223, 78) 0%, rgb(215, 215, 215) 0%);"><span class="w-9 h-9 rounded-full bg-white grid place-items-center"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="#111318" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 10.5 12 3m0 0 7.5 7.5M12 3v18"></path></svg></span></button><div class="pt-16 pb-14"><div class="max-w-3xl mx-auto px-4"><a class="inline-block mb-2.5 text-gray-500 no-underline hover:text-neutral-900" href="/blogs">← All posts</a><div class="flex flex-col gap-2.5 mt-4 mb-5"><span class="bg-black text-white w-max rounded px-2 py-1 text-sm font-light">Case Study</span><h1 class="text-3xl md:text-4xl font-semibold leading-tight">Building an Automated Portfolio Manager: Chainlink Automation, Functions, and Data Feeds Working Together</h1><p class="text-gray-500 text-sm">Aug 28, 2026 · 6 min read</p></div><img src="/static/media/automated-portfolio-manager.7f1f14eefa36bf79a1e4f39110638e59.svg" alt="Building an Automated Portfolio Manager: Chainlink Automation, Functions, and Data Feeds Working Together" class="w-full rounded-xl shadow-soft"><p class="text-lg text-gray-600 my-5">A hands-on build following Chainlink's own Automated Portfolio Manager pattern — Automation triggers Functions to fetch off-chain market signals, which drive an on-chain rebalance across a gold/BTC/ETH portfolio. 17 tests, full architecture breakdown, and an honest account of what's mocked vs. real.</p><div class="sticky top-16 z-30 bg-white py-4"><select class="w-full p-2.5 text-base font-medium border border-gray-300 rounded outline-none" aria-label="Jump to section"><option value="" selected="">Table of Contents</option><option value="the-problem-an-oracle-cant-see-everything">The problem: an oracle can't see everything</option><option value="architecture">Architecture</option><option value="the-contracts">The contracts</option><option value="the-rebalancing-logic">The rebalancing logic</option><option value="whats-real-vs-mocked-and-why">What's real vs. mocked — and why</option><option value="verified-not-assumed">Verified, not assumed</option><option value="not-done-yet">Not done yet</option></select></div><article class="prose prose-lg max-w-none prose-headings:scroll-mt-24 prose-headings:font-semibold prose-a:text-brand-ink prose-code:before:content-none prose-code:after:content-none"><p>Chainlink publishes a quickstart for an <a href="https://docs.chain.link/quickstarts/automated-portfolio-manager">Automated Portfolio Manager</a> —
+a portfolio that rebalances itself using three of their services together instead of
+just one. I built it end to end to understand how those pieces actually fit, not just
+read about it. This is the architecture, the rebalancing logic, and what's mocked
+versus real.</p>
+<h2 id="the-problem-an-oracle-can39t-see-everything">The problem: an oracle can't see everything</h2>
+<p>A price feed tells a contract what an asset is worth right now. It can't tell a
+contract "crypto sentiment just turned bearish" or "the gold volatility index spiked" —
+those aren't prices, they're computed signals that live behind ordinary REST APIs. If
+your rebalancing logic needs to react to them, something has to fetch them, and that
+something can't be the contract itself — contracts can't make HTTP calls.</p>
+<p>That's the gap <strong>three Chainlink services close together</strong>:</p>
+<ul>
+<li><strong>Functions</strong> — runs JavaScript off-chain (on Chainlink's DON) to call an external
+API and bring the result back on-chain.</li>
+<li><strong>Automation</strong> — triggers that fetch on a schedule, then separately watches for
+"new data is in, time to act" and calls the rebalance.</li>
+<li><strong>Data Feeds</strong> — prices the actual assets being held, so a rebalance can be sized
+correctly.</li>
+</ul>
+<h2 id="architecture">Architecture</h2>
+<pre><code>[Time-based upkeep, daily 3 AM UTC]
+        │
+        ▼
+OffchainDataFetcher.sendRequestCBOR()  ──▶  Chainlink Functions (DON)
+        │                                    runs JS: CryptoCompare sentiment
+        │                                    + MarketData GVZ index
+        ▼
+   fulfillRequest() stores sentimentScore + gvzIndex on-chain
+        │
+        ▼
+[Custom-logic upkeep polls checkUpkeep() continuously]
+        │  sees fresh data + interval elapsed → true
+        ▼
+AutomatedPortfolioManager.performUpkeep()
+        │  reads sentimentScore + gvzIndex, reads Data Feeds for pricing
+        ▼
+   rebalances gold / BTC / ETH holdings toward new target weights
+</code></pre>
+<p>Two contracts, two separate responsibilities. <code>OffchainDataFetcher</code> is the only
+thing that talks to the outside world; <code>AutomatedPortfolioManager</code> never makes a
+Functions call itself, it just reads whatever the fetcher last stored. That
+separation matters: it means the portfolio logic can be tested completely
+independently of anything network- or DON-related.</p>
+<h2 id="the-contracts">The contracts</h2>
+<table>
+<thead>
+<tr>
+<th>Contract</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>OffchainDataFetcher.sol</code></td>
+<td>Chainlink Functions consumer. <code>sendRequestCBOR()</code> (forwarder-gated) builds and sends the request; <code>fulfillRequest()</code> decodes the DON's response into a sentiment score and a GVZ index.</td>
+</tr>
+<tr>
+<td><code>AutomatedPortfolioManager.sol</code></td>
+<td>Chainlink Automation-compatible. <code>checkUpkeep()</code> flips true once fresh data exists and the rebalance interval has elapsed; <code>performUpkeep()</code> (forwarder-gated) computes new target weights and rebalances.</td>
+</tr>
+<tr>
+<td><code>MockAsset.sol</code></td>
+<td>Mintable/burnable ERC-20 standing in for a real wrapped asset (mXAU/mWBTC/mETH).</td>
+</tr>
+<tr>
+<td><code>MockFunctionsRouter.sol</code></td>
+<td>Local stand-in for the real Functions Router — matches the exact <code>sendRequest</code> selector <code>FunctionsClient</code> calls, so the real consumer contract runs completely unmodified against it.</td>
+</tr>
+</tbody></table>
+<p>Both <code>OffchainDataFetcher</code> and <code>AutomatedPortfolioManager</code> extend Chainlink's actual
+<code>FunctionsClient</code> and <code>AutomationCompatibleInterface</code> from <code>@chainlink/contracts</code> —
+not reimplementations. Price feeds use Chainlink's own <code>MockV3Aggregator</code>, the same
+<code>AggregatorV3Interface</code> shape a real Data Feed exposes.</p>
+<h2 id="the-rebalancing-logic">The rebalancing logic</h2>
+<p>This is the part that made the exercise worth doing — turning two numbers into an
+allocation decision:</p>
+<ul>
+<li><strong>GVZ (gold volatility index)</strong> sets the gold weight. Below a "calm" threshold,
+gold floors at 20%. Above a "stressed" threshold, it caps at 60% — a flight-to-safety
+response scaled linearly between the two.</li>
+<li><strong>Sentiment score</strong> (-100 to 100) tilts what's left — the "crypto sleeve" — between
+BTC and ETH. Bullish sentiment shifts weight toward ETH, bearish toward BTC, clamped
+to a 30/70..70/30 range either direction so one extreme reading can't wipe out an
+entire side of the portfolio.</li>
+</ul>
+<pre><code class="language-solidity">function _computeTargetWeights(int256 sentiment, uint256 gvz)
+    public pure returns (uint256 goldBps, uint256 btcBps, uint256 ethBps)
+{
+    if (gvz &gt;= GVZ_HIGH_THRESHOLD) {
+        goldBps = GOLD_BPS_CEIL;                 // 60% — stressed market
+    } else if (gvz &lt;= GVZ_LOW_THRESHOLD) {
+        goldBps = GOLD_BPS_FLOOR;                 // 20% — calm market
+    } else {
+        goldBps = GOLD_BPS_FLOOR +
+            ((gvz - GVZ_LOW_THRESHOLD) * (GOLD_BPS_CEIL - GOLD_BPS_FLOOR))
+            / (GVZ_HIGH_THRESHOLD - GVZ_LOW_THRESHOLD);
+    }
+
+    uint256 cryptoBps = BPS - goldBps;
+    int256 clamped = sentiment &gt; 100 ? int256(100) : sentiment &lt; -100 ? int256(-100) : sentiment;
+    int256 ethShareOfCrypto = int256(5_000) + clamped * 20;   // 30%..70% of the sleeve
+    ethBps = (cryptoBps * uint256(ethShareOfCrypto)) / BPS;
+    btcBps = cryptoBps - ethBps;
+}
+</code></pre>
+<p>Executing the rebalance doesn't route through a DEX — the manager holds the mock
+assets directly and mints the shortfall / burns the excess against the same price
+feeds, so it's deterministic and fully testable without needing swap liquidity to
+exist. A test asserts total portfolio value is conserved across a rebalance to the
+cent (within integer-division dust) — the whole point is that a rebalance moves
+<em>allocation</em>, not net worth.</p>
+<h2 id="what39s-real-vs-mocked-and-why">What's real vs. mocked — and why</h2>
+<p>Same honesty convention I use on every project here: the parts that need a funded
+wallet, a live Functions subscription, or a real DON are mocked locally so the logic
+is fully built and tested <em>now</em>, with a documented path to go live.</p>
+<p><strong>Real, unmodified:</strong> <code>FunctionsClient</code>, <code>AutomationCompatibleInterface</code>,
+<code>AggregatorV3Interface</code>/<code>MockV3Aggregator</code> — imported straight from
+<code>@chainlink/contracts</code>. Neither of my contracts would need to change to point at
+the real Sepolia Functions Router or a real registered Automation upkeep.</p>
+<p><strong>Mocked for local dev:</strong> the Functions Router + DON itself (<code>MockFunctionsRouter</code>
+— a test double, not a reimplementation of Chainlink's infrastructure), the price
+feeds (owner-settable instead of live market data), and the automation forwarder
+(the deployer's address instead of a real registration).</p>
+<h2 id="verified-not-assumed">Verified, not assumed</h2>
+<pre><code>17 passing
+  ✔ only the automation forwarder can request data
+  ✔ routes a request and stores the DON's fulfilled answer
+  ✔ only the router can call handleOracleFulfillment
+  ✔ records a Functions execution error instead of reverting
+  ✔ shifts to the gold ceiling when GVZ is high (flight to safety)
+  ✔ shifts to the gold floor when GVZ is low (calm market)
+  ✔ tilts the crypto sleeve toward ETH on bullish sentiment / BTC on bearish
+  ✔ clamps sentiment outside [-100, 100]
+  ✔ only the automation forwarder can call performUpkeep
+  ✔ performUpkeep reverts with no fresh data, or before the interval elapses
+  ✔ rebalances toward gold and preserves total portfolio value when GVZ spikes
+</code></pre>
+<p>The access-control tests matter as much as the math ones. <code>performUpkeep</code> and
+<code>sendRequestCBOR</code> are both gated to a single forwarder address — exactly the shape
+Chainlink's own Automation registry uses, and exactly the kind of check that's easy
+to skip when a contract "only" reacts to oracle data instead of holding user funds
+directly. It still moves real allocation; it still deserves the same access-control
+discipline as anything else on-chain.</p>
+<h2 id="not-done-yet">Not done yet</h2>
+<p>Sepolia deploy against the real Functions Router and a registered Automation upkeep,
+the actual CryptoCompare/MarketData JavaScript Functions would execute, and swapping
+mint/burn for real DEX trades once this manages a real asset instead of a mock one —
+all documented as the next concrete steps, not hand-waved.</p>
+</article><div class="flex flex-wrap gap-2 my-8"><a class="inline-block bg-gray-100 border border-gray-200 rounded-full px-3 py-1 text-xs text-gray-600 no-underline hover:bg-brand hover:border-brand hover:text-neutral-900 transition-colors" href="/blogs?tag=Chainlink">#Chainlink</a><a class="inline-block bg-gray-100 border border-gray-200 rounded-full px-3 py-1 text-xs text-gray-600 no-underline hover:bg-brand hover:border-brand hover:text-neutral-900 transition-colors" href="/blogs?tag=Automation">#Automation</a><a class="inline-block bg-gray-100 border border-gray-200 rounded-full px-3 py-1 text-xs text-gray-600 no-underline hover:bg-brand hover:border-brand hover:text-neutral-900 transition-colors" href="/blogs?tag=Functions">#Functions</a><a class="inline-block bg-gray-100 border border-gray-200 rounded-full px-3 py-1 text-xs text-gray-600 no-underline hover:bg-brand hover:border-brand hover:text-neutral-900 transition-colors" href="/blogs?tag=Solidity">#Solidity</a><a class="inline-block bg-gray-100 border border-gray-200 rounded-full px-3 py-1 text-xs text-gray-600 no-underline hover:bg-brand hover:border-brand hover:text-neutral-900 transition-colors" href="/blogs?tag=DeFi">#DeFi</a><a class="inline-block bg-gray-100 border border-gray-200 rounded-full px-3 py-1 text-xs text-gray-600 no-underline hover:bg-brand hover:border-brand hover:text-neutral-900 transition-colors" href="/blogs?tag=Smart%20Contracts">#Smart Contracts</a></div><div class="flex justify-between gap-4 border-t border-gray-200 pt-5"><a class="max-w-[48%] text-gray-500 no-underline font-medium hover:text-neutral-900" href="/blogs/testing-dapps-with-playwright">← Testing dApps with Playwright: Real Test Cases and the Workarounds Nobody Documents</a><span></span></div></div></div><footer id="footer" class="bg-[#15161c] text-white"><div class="max-w-6xl mx-auto px-4 py-12"><div class="flex flex-col md:flex-row items-center justify-between gap-6"><div class="text-center md:text-left"><p class="text-xl font-bold tracking-wide">PRAVIN<span class="text-brand">DEV</span></p><p class="text-sm text-neutral-400 mt-1 max-w-md">White-label blockchain development partner — smart contracts, dApps, DeFi &amp; RWA.</p></div><div class="flex items-center gap-3"><a href="https://twitter.com/PravinDev10" target="_blank" rel="noreferrer" aria-label="X (Twitter)" title="X (Twitter)" class="w-10 h-10 rounded-full bg-white/10 text-white flex items-center justify-center no-underline hover:bg-brand hover:text-neutral-900 transition-colors"><i class="fab fa-twitter"></i></a><a href="https://wa.me/919789741475" target="_blank" rel="noreferrer" aria-label="WhatsApp" title="WhatsApp" class="w-10 h-10 rounded-full bg-white/10 text-white flex items-center justify-center no-underline hover:bg-brand hover:text-neutral-900 transition-colors"><i class="fab fa-whatsapp"></i></a><a href="https://www.linkedin.com/in/pravin-raj-dev/" target="_blank" rel="noreferrer" aria-label="LinkedIn" title="LinkedIn" class="w-10 h-10 rounded-full bg-white/10 text-white flex items-center justify-center no-underline hover:bg-brand hover:text-neutral-900 transition-colors"><i class="fab fa-linkedin-in"></i></a><a href="https://github.com/pravindev12" target="_blank" rel="noreferrer" aria-label="GitHub" title="GitHub" class="w-10 h-10 rounded-full bg-white/10 text-white flex items-center justify-center no-underline hover:bg-brand hover:text-neutral-900 transition-colors"><i class="fab fa-github"></i></a><a href="mailto:pravinpersonal3@gmail.com" target="_blank" rel="noreferrer" aria-label="Email" title="Email" class="w-10 h-10 rounded-full bg-white/10 text-white flex items-center justify-center no-underline hover:bg-brand hover:text-neutral-900 transition-colors"><i class="fas fa-envelope"></i></a></div></div><div class="border-t border-white/10 mt-8 pt-6 text-center text-sm text-neutral-400">Copyright © 2026 <a class="text-white font-medium no-underline hover:text-brand" href="/">Pravin Raj</a>. All Rights Reserved.</div></div></footer></div></body></html>
