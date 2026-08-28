@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.bb5cfea2.css",
-    "main.js": "/static/js/main.4fd04dd9.js",
+    "main.js": "/static/js/main.3c8dff81.js",
     "static/media/pravin.png": "/static/media/pravin.3bc6e293a3c398d82d3b.png",
     "static/media/faq.png": "/static/media/faq.af3e9845f0097bec3fee.png",
     "static/media/upexcise.png": "/static/media/upexcise.d18db34983bf077d4289.png",
@@ -14,14 +14,15 @@
     "static/media/soap-scribe.svg": "/static/media/soap-scribe.2f828824b7a1e48d1be2d9cc85649136.svg",
     "static/media/carbon-marketplace.svg": "/static/media/carbon-marketplace.9b7b6691f2ad70aac597bc5ac37b3d94.svg",
     "static/media/carbon-credit.svg": "/static/media/carbon-credit.958d309f6d0a6816f4f58f70f631bff5.svg",
+    "static/media/ton-prediction-market.svg": "/static/media/ton-prediction-market.0a22d2cd717c23a9c48c8eaedc36defa.svg",
     "static/media/playwright-dapp-testing.svg": "/static/media/playwright-dapp-testing.c6d4a0e76a149a7ef5931023fa6b2100.svg",
     "static/media/agri-erpnext.svg": "/static/media/agri-erpnext.da71ac9059b399ba3a7863773c7b6083.svg",
     "static/media/pharmachain.svg": "/static/media/pharmachain.22d19ccbb53bb6dd4bf48203b2436465.svg",
     "main.bb5cfea2.css.map": "/static/css/main.bb5cfea2.css.map",
-    "main.4fd04dd9.js.map": "/static/js/main.4fd04dd9.js.map"
+    "main.3c8dff81.js.map": "/static/js/main.3c8dff81.js.map"
   },
   "entrypoints": [
     "static/css/main.bb5cfea2.css",
-    "static/js/main.4fd04dd9.js"
+    "static/js/main.3c8dff81.js"
   ]
 }
